@@ -1,0 +1,2 @@
+aws s3api create-bucket --bucket terraform-state-$(aws sts get-caller-identity --query Account --output text) --region us-east-1
+aws s3api put-bucket-versioning --bucket terraform-state-$(aws sts get-caller-identity --query Account --output text) --versioning-configuration Status=Enabled
